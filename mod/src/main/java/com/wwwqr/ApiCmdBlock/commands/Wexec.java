@@ -13,6 +13,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.Component;
 
 import com.wwwqr.ApiCmdBlock.ApiCmdBlock;
 
@@ -24,6 +25,10 @@ public class Wexec {
                     .executes(context -> {
                         String url =  StringArgumentType.getString(context, "url");
                         CommandSourceStack src = context.getSource();
+                        if (!src.hasPermission(2)) {
+                            src.sendFailure(Component.literal("You do not have permission to execute this command."));
+                            return Command.SINGLE_SUCCESS;
+                        }
 
                         StringBuilder response = new StringBuilder();
                         try {
