@@ -40,10 +40,11 @@ public class Wexec {
                             BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                             String tmpLine;
                             while ((tmpLine = in.readLine()) != null) {
-                                response.append(tmpLine);
+                                response.append(tmpLine + "\n");
                             }
                             in.close();
                             result = response.toString();
+                            ApiCmdBlock.LOGGER.info(result);
 
                             tmpLine = "";
                             for (int i = 0; i < result.length(); i++) {
@@ -64,8 +65,6 @@ public class Wexec {
                             ApiCmdBlock.LOGGER.error("wexec command IOException", e);
                             return Command.SINGLE_SUCCESS;
                         }
-
-                        src.getServer().getCommands().performPrefixedCommand(src, "say goeie! (" + url + ")");
                         return Command.SINGLE_SUCCESS;
                     }))
         );
