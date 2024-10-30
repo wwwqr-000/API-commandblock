@@ -49,7 +49,6 @@ public class Wexec {
                             }
                             in.close();
                             result = response.toString();
-                            ApiCmdBlock.LOGGER.info(result);
 
                             tmpLine = "";
                             for (int i = 0; i < result.length(); i++) {
