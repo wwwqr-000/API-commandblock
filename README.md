@@ -1,6 +1,6 @@
-![thumb](https://github.com/wwwqr-000/API-commandblock/blob/main/thumb.png)
+<h4>This mod allows you to execute multiple commands with one command using a url endpoint</h4>
 
-<p>This mod allows you to execute multiple commands with one command using a url endpoint</p>
+![thumb](https://github.com/wwwqr-000/API-commandblock/blob/main/thumb.png)
 
 <h2>Wexec command example</h2>
 
